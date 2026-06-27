@@ -19,7 +19,7 @@ export class VoiceService {
   }
 
   constructor(private http: HttpClient) {
-    this.apiUrl =g this.normalizeBaseUrl(environment.apiBaseUrl);
+    this.apiUrl =this.normalizeBaseUrl(environment.apiBaseUrl);
   }
 
   sendMessage(message: string): Observable<any> {

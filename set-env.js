@@ -29,7 +29,7 @@ const envFilePath = path.join(__dirname, 'src', 'environments', envFileName);
 
 // Read environment variables from process.env (available during build)
 // Provide sensible defaults if not set
-const apiBaseUrl = process.env.API_BASE_URL || (isProduction ? '/api' : 'http://localhost:8080/api');
+const apiBaseUrl = process.env.API_BASE_URL || (isProduction ? 'https://voicebot-server-cf1s.onrender.com/api' : 'http://localhost:8080/api');
 const geminiApiKey = process.env.GEMINI_API_KEY || 'your-api-key-here';
 
 // Create the environment file content
