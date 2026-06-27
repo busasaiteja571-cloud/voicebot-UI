@@ -3,6 +3,7 @@
 
 export const environment = {
   production: true,
-  apiBaseUrl: 'https://voicebot-server-xyz.vercel.app/api',
+  // Use the Render backend URL in production to avoid calling the Vercel frontend domain
+  apiBaseUrl: 'https://voicebot-server-cf1s.onrender.com',
   geminiApiKey: 'sk-1234567890abcdefghij'
 };
