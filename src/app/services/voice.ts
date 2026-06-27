@@ -7,9 +7,20 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class VoiceService {
-  private readonly apiUrl = `${environment.apiBaseUrl}/api/chat`;
+  private readonly apiUrl: string;
 
-  constructor(private http: HttpClient) {}
+  private normalizeBaseUrl(base: string): string {
+    // remove trailing slash
+    if (base.endsWith('/')) base = base.slice(0, -1);
+    // if base already includes /api at the end, don't append another
+    if (base.endsWith('/api')) return `${base}/chat`;
+    if (base.endsWith('/api/')) return `${base}chat`;
+    return `${base}/api/chat`;
+  }
+
+  constructor(private http: HttpClient) {
+    this.apiUrl = this.normalizeBaseUrl(environment.apiBaseUrl);
+  }
 
   sendMessage(message: string): Observable<any> {
     const headers = new HttpHeaders({
