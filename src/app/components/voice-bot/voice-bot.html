@@ -1,0 +1,48 @@
+<div class="app-wrapper">
+  <div class="glass-card">
+    <header class="header">
+      <h1>Saiteja Busa</h1>
+      <p class="role-badge">Java Full-Stack Engineer Clone</p>
+    </header>
+
+    <div class="interaction-zone">
+      <button 
+        (click)="toggleMicrophone()" 
+        [class.recording]="isListening()" 
+        class="pulse-button">
+        @if (!isListening()) {
+          <span>🎙️ Click to Speak</span>
+        } @else {
+          <span>🛑 Listening... Ask me anything</span>
+        }
+      </button>
+    </div>
+
+    <!-- Conditional View Rendering Node Using Modern Angular Control Flow -->
+    @if (transcript() || botReply() || isLoading()) {
+      <div class="chat-terminal">
+        @if (transcript()) {
+          <div class="message-bubble user-bubble">
+            <span class="sender-tag">Interviewer:</span>
+            <p>{{ transcript() }}</p>
+          </div>
+        }
+
+        @if (isLoading()) {
+          <div class="wave-loader">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+        }
+
+        @if (botReply() && !isLoading()) {
+          <div class="message-bubble bot-bubble">
+            <span class="sender-tag">Saiteja AI Bot:</span>
+            <p>{{ botReply() }}</p>
+          </div>
+        }
+      </div>
+    }
+  </div>
+</div>

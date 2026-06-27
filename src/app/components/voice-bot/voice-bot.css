@@ -1,0 +1,137 @@
+.app-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  padding: 20px;
+}
+
+.glass-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 520px;
+  padding: 35px;
+  box-sizing: border-box;
+  border: 1px solid #eaeaea;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 26px;
+  color: #111111;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.role-badge {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 13px;
+  color: #0070f3;
+  background: rgba(0, 112, 243, 0.06);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.interaction-zone {
+  margin: 40px 0;
+}
+
+.pulse-button {
+  background: #0070f3;
+  color: #ffffff;
+  border: none;
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 14px rgba(0, 112, 243, 0.25);
+}
+
+.pulse-button:hover {
+  background: #0051b3;
+  transform: translateY(-1px);
+}
+
+.pulse-button.recording {
+  background: #e02424;
+  box-shadow: 0 0 0 0 rgba(224, 36, 36, 0.5);
+  animation: dynamicPulse 1.6s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+.chat-terminal {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 25px;
+  text-align: left;
+}
+
+.message-bubble {
+  padding: 14px 18px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.user-bubble {
+  background: #f4f9ff;
+  border-left: 4px solid #0070f3;
+}
+
+.bot-bubble {
+  background: #f5fbf7;
+  border-left: 4px solid #10b981;
+}
+
+.sender-tag {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #666666;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.message-bubble p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #222222;
+}
+
+.wave-loader {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+}
+
+.wave-loader .dot {
+  width: 8px;
+  height: 8px;
+  margin: 0 4px;
+  background: #a0a0a0;
+  border-radius: 50%;
+  animation: waveBounce 0.6s infinite alternate;
+}
+
+.wave-loader .dot:nth-child(2) { animation-delay: 0.2s; }
+.wave-loader .dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes dynamicPulse {
+  to { box-shadow: 0 0 0 18px rgba(224, 36, 36, 0); }
+}
+
+@keyframes waveBounce {
+  to { transform: translateY(-8px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
