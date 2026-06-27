@@ -1,5 +1,5 @@
 export const environment = {
   production: false,
-  apiBaseUrl: 'https://voicebot-server-cf1s.onrender.com/api', // <-- Paste it here
+  apiBaseUrl: 'https://voicebot-server-cf1s.onrender.com', // <-- Paste it here
   geminiApiKey: ''
 };

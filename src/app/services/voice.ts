@@ -7,7 +7,7 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class VoiceService {
-  private readonly apiUrl = `${environment.apiBaseUrl}/chat`;
+  private readonly apiUrl = `${environment.apiBaseUrl}/api/chat`;
 
   constructor(private http: HttpClient) {}
 
